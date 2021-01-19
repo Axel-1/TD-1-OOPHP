@@ -2,17 +2,11 @@
 
 include "productClass.php";
 
-$prod1 = new product();
-$prod1->constructor2("Stylo");
+$prod1 = new product("Stylo");
+$prod2 = new product("Trousse", 19.6, 8.99, 0);
+$prod3 = new product("Crayon", 19.6, 1.5, 25);
+$prod4 = new product("Pomme", 5.5, 0.50, 150);
 
-$prod2 = new product();
-$prod2->constructor1("Trousse", 19.6, 8.99, 0);
-
-$prod3 = new product();
-$prod3->constructor1("Crayon", 19.6, 1.5, 25);
-
-$prod4 = new product();
-$prod4->constructor1("Pomme", 5.5, 0.50, 150);
 
 $prod1->printAll();
 print("\n");

@@ -11,6 +11,22 @@ class product
     private $vat;
     private $qty;
 
+    public function __construct() {
+        return $this->switchConstruct(func_get_args());
+    }
+
+    private function switchConstruct(array $args)
+    {
+        switch (count($args))
+        {
+            case 1:
+                return call_user_func_array(array($this, 'constructor2'), $args);
+            case 4:
+                return call_user_func_array(array($this, 'constructor1'), $args);
+        }
+        die("Invalid number of args");
+    }
+
     static public function getObjNbr()
     {
         return self::$productCount;
